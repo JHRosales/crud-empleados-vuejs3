@@ -61,7 +61,7 @@ export default {
         nombre: this.empleado.nombre,
         correo: this.empleado.correo,
       };
-      fetch("http://localhost/back-empleados/?insertar=1", {
+      fetch(`${process.env.VUE_APP_BASE_URL}/back-empleados/?insertar=1`, {
         method: "POST",
         body: JSON.stringify(datosEnviar),
       })

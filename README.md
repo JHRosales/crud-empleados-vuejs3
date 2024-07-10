@@ -1,5 +1,9 @@
 # crud-empleados-vuejs-v3
 
+## Install Node
+install node
+```
+
 ## Project setup
 ```
 npm install

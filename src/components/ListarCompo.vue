@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     consultarEmpleados() {
-      fetch("http://localhost/back-empleados/")
+      fetch(`${process.env.VUE_APP_BASE_URL}/back-empleados/`)
         .then((respuesta) => respuesta.json())
         .then((datosRespuesta) => {
           this.empleados = [];
@@ -56,7 +56,7 @@ export default {
         .catch((e) => console.log(e));
     },
     borrarEmpleado(id){
-        fetch("http://localhost/back-empleados/?borrar="+id)
+        fetch(`${process.env.VUE_APP_BASE_URL}/back-empleados/?borrar=`+id)
         .then((respuesta) => respuesta.json())
         .then((datosRespuesta) => {
           console.log(datosRespuesta);

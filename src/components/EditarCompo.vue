@@ -60,7 +60,7 @@ export default {
   methods: {
     obtenerInformacionID() {
       fetch(
-        "http://localhost/back-empleados/?consultar=" + this.$route.params.id
+        `${process.env.VUE_APP_BASE_URL}/back-empleados/?consultar=` + this.$route.params.id
       )
         .then((respuesta) => respuesta.json())
         .then((datosRespuesta) => {
@@ -76,7 +76,7 @@ export default {
         nombre: this.empleado.nombre,
         correo: this.empleado.correo,
       };
-      fetch("http://localhost/back-empleados/?actualizar="+this.$route.params.id, {
+      fetch(`${process.env.VUE_APP_BASE_URL}/back-empleados/?actualizar=`+this.$route.params.id, {
         method: "POST",
         body: JSON.stringify(datosEnviar),
       })
